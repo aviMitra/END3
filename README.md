@@ -18,3 +18,8 @@ For creating a neural network for a particular problem we should start with defi
 
 ### What is the "chain rule" in gradient flow?
 
+Chain rule allows the intermediate derivatives to be multiplied to get the final derivative needed. During back-propagation, we need to evaluate derivative of loss function based on input variables to decide on the weight changes. In order to achieve that, we could take intermediate derivatives layer by layer starting from the final layer and due to chain rule of derivatives, we could be able to find the needed derivative just by multiplying the derivatives we calculated for the layers.
+
+df / dx = (df / dh1) * (dh1 / dh2) * (dh2 /dh3) * (dh3 / dx)
+
+Wi = Wi - (di / dx) * lr
